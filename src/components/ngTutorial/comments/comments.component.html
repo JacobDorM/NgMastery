@@ -1,0 +1,8 @@
+@if (comments$ | async; as comments) {
+<ul>
+  <li *ngFor="let comment of comments.slice(0, 10)">
+    <strong>{{ comment.name }}</strong> - {{ comment.email }}<br />
+    <em>{{ comment.body }}</em>
+  </li>
+</ul>
+}
