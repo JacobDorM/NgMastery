@@ -1,13 +1,10 @@
-// import { RouterOutlet } from '@angular/router';
-
 import { Component } from '@angular/core';
 import { ChildComponent } from '../components/ngTutorial/child.component';
-import { DeferComponent } from '../components/ngTutorial/defer.component';
-import { ImgComponent } from '../components/ngTutorial/comments/imgComponent/img.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ChildComponent, DeferComponent, ImgComponent],
+  imports: [ChildComponent,RouterLink,RouterOutlet],
   template: `
     <div>
       <app-child
@@ -15,12 +12,20 @@ import { ImgComponent } from '../components/ngTutorial/comments/imgComponent/img
         (incrementCountEvent)="onCountIncrement($event)"
       />
       <div>🐢 all the way Up {{ count }}</div>
-      <app-img />
-      <app-defer />
     </div>
+    <nav>
+        <a routerLink="/">Home</a>
+        |
+        <a routerLink="/comments">Comments</a>
+        |
+        <a routerLink="/img">Img</a>
+        |
+        <a routerLink="/defer">Defer</a>
+        |
+        <a routerLink="/forms">Forms</a>
+        </nav>
+   <router-outlet />
   `,
-  // templateUrl: './app.component.html',
-  // styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'this is a message from parent';
