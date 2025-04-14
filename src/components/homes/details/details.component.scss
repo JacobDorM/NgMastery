@@ -61,3 +61,11 @@ input {
     height: 400px;
   }
 }
+
+.primary-button {
+  cursor: pointer;
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
