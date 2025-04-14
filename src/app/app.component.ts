@@ -4,9 +4,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [RouterLink, RouterOutlet],
+  styleUrl: './app.component.scss',
   template: `
-    <nav>
-      <a routerLink="/ngMastery">NgMastery</a>
+    <nav class="apps-bar">
+      <a routerLink="/ngTutorial">ngTutorial</a>
       |
       <a routerLink="/homes">Homes</a>
     </nav>
